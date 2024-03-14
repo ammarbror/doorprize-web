@@ -28,6 +28,8 @@ export default function UndianPage({}: Props) {
 
   const [winnerData, setWinnerData] = useState();
 
+  const [duration, setDuration] = useState(9999);
+
   useEffect(() => {
     const handleResize = () => {
       setWindowDimensions({
@@ -122,12 +124,12 @@ export default function UndianPage({}: Props) {
                 showConfetti ? "opacity-100" : "opacity-0"
               }`}
             >
-              Selamat Kepada Kode Unik ✨
+              Selamat Kepada {winnerData?.user?.displayName}
             </div>
             {startRandom && (
               <RandomReveal
                 isPlaying={startRandom}
-                duration={5}
+                duration={duration}
                 revealDuration={1.6}
                 characters={winnerData?.uniqueCode}
                 onComplete={() => handleComplete()}
@@ -138,6 +140,7 @@ export default function UndianPage({}: Props) {
             <button
               className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded disabled:bg-slate-400"
               onClick={async () => {
+                setDuration(99);
                 setWinnerData(
                   dataParticipant?.data[Math.floor(Math.random() * 1)]
                 );
@@ -152,18 +155,28 @@ export default function UndianPage({}: Props) {
                 : "Start"}
             </button>
             <button
-              className="bg-blue-400 hover:bg-blue-500 text-white py-2 px-4 rounded"
+              className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded disabled:bg-slate-400"
               onClick={async () => {
-                setWinnerData(
-                  dataParticipant?.data[Math.floor(Math.random() * 1)]
-                );
-                setStartRandom(true);
+                setDuration(0);
               }}
-              disabled={_.isEmpty(dataParticipant?.data)}
+              // disabled={_.isEmpty(dataParticipant?.data)}
             >
-              Mulai Lagi
+              Stop
             </button>
           </div>
+          <button
+            className="bg-blue-400 hover:bg-blue-500 text-white py-2 px-4 rounded"
+            onClick={async () => {
+              setStartRandom(false);
+              setShowConfetti(false);
+              setWinnerData(
+                dataParticipant?.data[Math.floor(Math.random() * 1)]
+              );
+            }}
+            disabled={_.isEmpty(dataParticipant?.data)}
+          >
+            Mulai Lagi
+          </button>
         </div>
         <div className="fixed inset-x-0 bottom-3 text-white text-center">
           © 2024 BKN

@@ -6,6 +6,7 @@ import logoBri from "../assets/img/logo-bri.png";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { LoaderCircle } from "lucide-react";
+import _ from "lodash";
 
 type Props = {};
 export default function FormRegistrasiPage({}: Props) {
@@ -79,18 +80,28 @@ export default function FormRegistrasiPage({}: Props) {
         },
       })
       .then((res) => {
-        const data = res.data.data.createTransaction;
-        Swal.fire({
-          title: `Kode Unik <strong>${data.uniqueCode}</strong>`,
-          icon: "success",
-          html: `
-          <p>
-            Hallo ${data?.user?.displayName}, Berikut kode unik anda
-            <b>${data.uniqueCode}</b>,
-            screenshoot kode unik ini
-          </p>
-`,
-        });
+        let data = res.data;
+        if (_.has(data, "errors")) {
+          const error = data?.errors[0]?.message;
+          Swal.fire({
+            title: `Error`,
+            icon: "error",
+            text: `${error}`,
+          });
+        } else {
+          data = data.data?.createTransaction;
+          Swal.fire({
+            title: `Kode Unik <strong>${data.uniqueCode}</strong>`,
+            icon: "success",
+            html: `
+            <p>
+              Hallo ${data?.user?.displayName}, Berikut kode unik anda
+              <b>${data.uniqueCode}</b>,
+              screenshoot kode unik ini
+            </p>
+  `,
+          });
+        }
       });
     setIsLoading(false);
   };
@@ -113,7 +124,7 @@ export default function FormRegistrasiPage({}: Props) {
         <div className="space-y-6">
           <div>
             <label className="block text-sm font-medium leading-6 text-gray-900">
-              Nama
+              NAMA LENGKAP
             </label>
             <div className="mt-2">
               <input
@@ -133,7 +144,7 @@ export default function FormRegistrasiPage({}: Props) {
           </div>
           <div>
             <label className="block text-sm font-medium leading-6 text-gray-900">
-              No. Telepon
+              NOMOR TELEPON
             </label>
             <div className="mt-2">
               <input
@@ -153,7 +164,7 @@ export default function FormRegistrasiPage({}: Props) {
           </div>
           <div>
             <label className="block text-sm font-medium leading-6 text-gray-900">
-              Satker
+              UNIT / SATUAN / CABANG
             </label>
             <div className="mt-2">
               <input
