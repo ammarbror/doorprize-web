@@ -20,7 +20,7 @@ export default function SidebarLayout({ children }) {
         <SidebarItem
           icon={<QrCode size={20} />}
           text="QR Registrasi"
-          path="/admin/qr-registrasi"
+          path="/link-registrasi"
         />
       </Sidebar>
       <div className="flex-1 p-4">{children}</div>

@@ -75,11 +75,11 @@ export default function LoginPage() {
   return (
     <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-        <div className="flex justify-center items-center space-x-2">
-          <img className="mx-auto h-6 w-auto" src={logoBumn} alt="BUMN" />
-          <img className="mx-auto h-10 w-auto" src={logo} alt="BKN" />
-          <img className="mx-auto h-10 w-auto" src={logoKopri} alt="Kopri" />
-          <img className="mx-auto h-8 w-auto" src={logoBri} alt="BRI" />
+        <div className="flex justify-center items-center space-x-3">
+          <img className="h-6 w-auto" src={logoBumn} alt="BUMN" />
+          {/* <img className="mx-auto h-10 w-auto" src={logo} alt="BKN" />
+          <img className="mx-auto h-10 w-auto" src={logoKopri} alt="Kopri" /> */}
+          <img className="h-8 w-auto" src={logoBri} alt="BRI" />
         </div>
         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
           Login Akun
@@ -114,9 +114,9 @@ export default function LoginPage() {
             </label>
             <div className="mt-2">
               <input
-                id="no-telepon"
-                name="no-telepon"
-                type="text"
+                id="password"
+                name="password"
+                type="password"
                 required
                 className="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
                 onChange={(e) =>

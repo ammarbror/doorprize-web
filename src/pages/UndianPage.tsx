@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import background from "../assets/img/background.jpeg";
+import background from "../assets/img/background.png";
 import { RandomReveal } from "react-random-reveal";
 import Confetti from "react-confetti";
 import { getDataUndian } from "../api/collection";

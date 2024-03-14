@@ -13,6 +13,7 @@ import UndianPage from "./pages/UndianPage";
 import FormRegistrasiPage from "./pages/FormRegistrasiPage";
 import LoginPage from "./pages/LoginPage";
 import _ from "lodash";
+import QRRegistrasiPage from "./pages/QRRegistrasiPage";
 
 const ProtectedRoute = ({ redirectPath = "/login" }) => {
   const user = JSON.parse(localStorage.getItem("doorprize_app_user") ?? "{}");
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
   {
     path: "/registration",
     element: <FormRegistrasiPage />,
+  },
+  {
+    path: "/link-registrasi",
+    element: <QRRegistrasiPage />,
   },
 ]);
 
