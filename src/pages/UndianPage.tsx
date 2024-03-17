@@ -30,6 +30,8 @@ export default function UndianPage({}: Props) {
 
   const [duration, setDuration] = useState(9999);
 
+  const [isLoading, setIsLoading] = useState(false);
+
   useEffect(() => {
     const handleResize = () => {
       setWindowDimensions({
@@ -55,6 +57,7 @@ export default function UndianPage({}: Props) {
   }, []);
 
   async function getData() {
+    setIsLoading(true);
     let data = await getDataUndian();
 
     data = {
@@ -65,6 +68,7 @@ export default function UndianPage({}: Props) {
     if (!_.isEmpty(data.data)) {
       setDataParticipant(data);
     }
+    setIsLoading(false);
   }
 
   async function handleComplete() {
@@ -148,16 +152,18 @@ export default function UndianPage({}: Props) {
               }}
               disabled={_.isEmpty(dataParticipant?.data)}
             >
-              {_.isEmpty(dataParticipant?.data)
-                ? dataParticipant?.length === 0
-                  ? "Tidak Memenuhi Minimal Partisipan"
-                  : "Memuat Data..."
+              {isLoading
+                ? "Memuat Data..."
+                : _.isEmpty(dataParticipant?.data)
+                ? dataParticipant?.length === 0 &&
+                  "Tidak Memenuhi Minimal Partisipan"
                 : "Start"}
             </button>
             <button
               className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded disabled:bg-slate-400"
               onClick={async () => {
                 setDuration(0);
+                handleComplete();
               }}
               // disabled={_.isEmpty(dataParticipant?.data)}
             >
@@ -165,7 +171,7 @@ export default function UndianPage({}: Props) {
             </button>
           </div>
           <button
-            className="bg-blue-400 hover:bg-blue-500 text-white py-2 px-4 rounded"
+            className="bg-blue-400 hover:bg-blue-500 text-white py-2 px-4 rounded disabled:bg-slate-400"
             onClick={async () => {
               setStartRandom(false);
               setShowConfetti(false);
@@ -173,7 +179,7 @@ export default function UndianPage({}: Props) {
                 dataParticipant?.data[Math.floor(Math.random() * 1)]
               );
             }}
-            disabled={_.isEmpty(dataParticipant?.data)}
+            disabled={isLoading}
           >
             Mulai Lagi
           </button>

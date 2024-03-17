@@ -16,10 +16,7 @@ import {
   ChevronLast,
   ChevronLeft,
   ChevronRight,
-  ChevronsLeft,
 } from "lucide-react";
-
-type Props = {};
 
 export default function Table({ title, data, columns }) {
   const [globalFilter, setGlobalFilter] = useState("");
