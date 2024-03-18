@@ -102,12 +102,12 @@ export default function UndianPage({}: Props) {
     }`,
       variables: { id: winnerData?.id },
     };
-    // await axios.post(`${import.meta.env.VITE_BASE_URL_API}/graphql`, query, {
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     Authorization: import.meta.env.VITE_AUTH_TOKEN,
-    //   },
-    // });
+    await axios.post(`${import.meta.env.VITE_BASE_URL_API}/graphql`, query, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: import.meta.env.VITE_AUTH_TOKEN,
+      },
+    });
     getData();
   }
 
