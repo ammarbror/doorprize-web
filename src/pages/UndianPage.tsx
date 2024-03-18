@@ -128,7 +128,7 @@ export default function UndianPage({}: Props) {
                 showConfetti ? "opacity-100" : "opacity-0"
               }`}
             >
-              Selamat Kepada {winnerData?.user?.displayName}
+              {winnerData?.user?.displayName}
             </div>
             {startRandom && (
               <RandomReveal
@@ -184,9 +184,9 @@ export default function UndianPage({}: Props) {
             Mulai Lagi
           </button>
         </div>
-        <div className="fixed inset-x-0 bottom-3 text-white text-center">
+        {/* <div className="fixed inset-x-0 bottom-3 text-white text-center">
           © 2024 BKN
-        </div>
+        </div> */}
       </div>
     </>
   );

@@ -46,6 +46,7 @@ export function SidebarItem({ icon, text, active, alert, path }) {
             : "hover:bg-blue-50 text-gray-600"
         }`}
         to={path}
+        target="_blank"
       >
         {icon}
         <span className="w-52 ml-3">{text}</span>
