@@ -18,12 +18,12 @@ export default function FormRegistrasiPage({}: Props) {
     let code = "";
 
     // Generate 4 random letters
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 3; i++) {
       code += letters.charAt(Math.floor(Math.random() * letters.length));
     }
 
     // Generate 4 random numbers
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 3; i++) {
       code += numbers.charAt(Math.floor(Math.random() * numbers.length));
     }
 

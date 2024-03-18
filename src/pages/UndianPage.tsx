@@ -122,9 +122,9 @@ export default function UndianPage({}: Props) {
       <div className="relative">
         <div style={containerStyle}></div>
         <div className="fixed inset-x-0 bottom-20 text-center space-y-6">
-          <div className="text-white font-bold text-8xl mb-56 tracking-wide">
+          <div className="text-white font-bold text-9xl mb-56 tracking-wide">
             <div
-              className={`text-5xl tracking-normal transition-all duration-1000 mb-4 ${
+              className={`tracking-normal transition-all duration-1000 mb-4 ${
                 showConfetti ? "opacity-100" : "opacity-0"
               }`}
             >
