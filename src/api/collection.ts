@@ -3,7 +3,7 @@ import axios from "axios";
 export async function getDataUndian() {
   const query = {
     query: `query {
-        transactions(userId: null, mobile: null, isWinner: "false", uniqueCode: null, branch: null, startAt: null, endAt: null, offset: 0, limit: 1) {
+        transactions(userId: null, mobile: null, isWinner: "false", uniqueCode: null, branch: null, startAt: null, endAt: null, offset: 0, limit: 0) {
             id
             user {
                 id

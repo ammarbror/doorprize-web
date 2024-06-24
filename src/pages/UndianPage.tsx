@@ -74,12 +74,12 @@ export default function UndianPage({}: Props) {
   async function handleComplete() {
     setShowConfetti(true);
     const query = {
-      query: `mutation($id: String!) {
+      query: `mutation {
         updateTransaction(updateTransactionInput: {
-            id: $id,
+            id: "${winnerData?.id}",
             isWinner: true,
         }, updateUserInput: {
-            id: "34222c43-0b21-4a4d-82eb-1b50bc2255e9",
+            id: "${winnerData?.user?.id}",
             status: ACTIVE
         }) {
             id
@@ -100,7 +100,6 @@ export default function UndianPage({}: Props) {
             updatedAt
         }
     }`,
-      variables: { id: winnerData?.id },
     };
     await axios.post(`${import.meta.env.VITE_BASE_URL_API}/graphql`, query, {
       headers: {
@@ -146,7 +145,9 @@ export default function UndianPage({}: Props) {
               onClick={async () => {
                 setDuration(99);
                 setWinnerData(
-                  dataParticipant?.data[Math.floor(Math.random() * 1)]
+                  dataParticipant?.data[
+                    Math.floor(Math.random() * dataParticipant?.data.length)
+                  ]
                 );
                 setStartRandom(true);
               }}
@@ -176,7 +177,9 @@ export default function UndianPage({}: Props) {
               setStartRandom(false);
               setShowConfetti(false);
               setWinnerData(
-                dataParticipant?.data[Math.floor(Math.random() * 1)]
+                dataParticipant?.data[
+                  Math.floor(Math.random() * dataParticipant?.data.length)
+                ]
               );
             }}
             disabled={isLoading}
