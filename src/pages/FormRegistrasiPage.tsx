@@ -164,7 +164,7 @@ export default function FormRegistrasiPage({}: Props) {
           </div>
           <div>
             <label className="block text-sm font-medium leading-6 text-gray-900">
-              UNIT / SATUAN / CABANG
+              Jabatan dan Unit Kerja
             </label>
             <div className="mt-2">
               <input
