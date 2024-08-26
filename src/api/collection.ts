@@ -1,9 +1,12 @@
 import axios from "axios";
+import moment from "moment";
 
 export async function getDataUndian() {
   const query = {
     query: `query {
-        transactions(userId: null, mobile: null, isWinner: "false", uniqueCode: null, branch: null, startAt: null, endAt: null, offset: 0, limit: 0) {
+        transactions(userId: null, mobile: null, isWinner: "false", uniqueCode: null, branch: null, startAt: ${moment().format(
+          "YYYY-MM-DD"
+        )}, endAt: ${moment().format("YYYY-MM-DD")}, offset: 0, limit: 0) {
             id
             user {
                 id
