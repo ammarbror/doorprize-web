@@ -10,7 +10,7 @@ export default function Sidebar({ children }) {
     <aside className="h-screen">
       <nav className="h-full flex flex-col bg-white border-r shadow-sm">
         <div className="p-4 pb-2 flex justify-between items-center">
-          <img src={logo} alt="logo" className="w-24" />
+          {/* <img src={logo} alt="logo" className="w-24" /> */}
           <button className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100">
             <ChevronFirst />
           </button>

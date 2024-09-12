@@ -121,7 +121,7 @@ export default function UndianPage({}: Props) {
       <div className="relative">
         <div style={containerStyle}></div>
         <div className="fixed inset-x-0 bottom-20 text-center space-y-6">
-          <div className="text-white font-bold text-9xl mb-56 tracking-wide">
+          <div className="text-black font-bold text-9xl mb-56 tracking-wide">
             <div
               className={`tracking-normal transition-all duration-1000 mb-4 ${
                 showConfetti ? "opacity-100" : "opacity-0"
@@ -141,7 +141,7 @@ export default function UndianPage({}: Props) {
           </div>
           <div className="flex justify-center space-x-3">
             <button
-              className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded disabled:bg-slate-400"
+              className="bg-blue-500 hover:bg-blue-600 text-black py-2 px-4 rounded disabled:bg-slate-400"
               onClick={async () => {
                 setDuration(99);
                 setWinnerData(
@@ -161,7 +161,7 @@ export default function UndianPage({}: Props) {
                 : "Start"}
             </button>
             <button
-              className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded disabled:bg-slate-400"
+              className="bg-red-500 hover:bg-red-600 text-black py-2 px-4 rounded disabled:bg-slate-400"
               onClick={async () => {
                 setDuration(0);
                 handleComplete();
@@ -172,7 +172,7 @@ export default function UndianPage({}: Props) {
             </button>
           </div>
           <button
-            className="bg-blue-400 hover:bg-blue-500 text-white py-2 px-4 rounded disabled:bg-slate-400"
+            className="bg-blue-400 hover:bg-blue-500 text-black py-2 px-4 rounded disabled:bg-slate-400"
             onClick={async () => {
               setStartRandom(false);
               setShowConfetti(false);
@@ -187,7 +187,7 @@ export default function UndianPage({}: Props) {
             Mulai Lagi
           </button>
         </div>
-        {/* <div className="fixed inset-x-0 bottom-3 text-white text-center">
+        {/* <div className="fixed inset-x-0 bottom-3 text-black text-center">
           © 2024 BKN
         </div> */}
       </div>
