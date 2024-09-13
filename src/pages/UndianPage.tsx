@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import background from "../assets/img/background.png";
 import { RandomReveal } from "react-random-reveal";
 import Confetti from "react-confetti";
@@ -121,7 +121,7 @@ export default function UndianPage({}: Props) {
       <div className="relative">
         <div style={containerStyle}></div>
         <div className="fixed inset-x-0 bottom-20 text-center space-y-6">
-          <div className="text-black font-bold text-9xl mb-56 tracking-wide">
+          <div className="text-black font-bold text-9xl mb-24 tracking-wide">
             <div
               className={`tracking-normal transition-all duration-1000 mb-4 ${
                 showConfetti ? "opacity-100" : "opacity-0"
