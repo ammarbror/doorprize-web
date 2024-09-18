@@ -133,7 +133,8 @@ export default function UndianPage({}: Props) {
               <RandomReveal
                 isPlaying={startRandom}
                 duration={duration}
-                revealDuration={1.6}
+                updateInterval={0.1}
+                revealDuration={0.5}
                 characterSet={winnerData?.user?.displayName.split("")}
                 characters={winnerData?.user?.displayName.split("")}
                 onComplete={() => handleComplete()}
