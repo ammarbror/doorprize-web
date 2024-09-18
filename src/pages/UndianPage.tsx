@@ -134,8 +134,8 @@ export default function UndianPage({}: Props) {
                 isPlaying={startRandom}
                 duration={duration}
                 revealDuration={1.6}
-                characters={winnerData?.user?.displayName}
-                // characters={"Ammar Abror"}
+                characterSet={winnerData?.user?.displayName.split("")}
+                characters={winnerData?.user?.displayName.split("")}
                 onComplete={() => handleComplete()}
               />
             )}
