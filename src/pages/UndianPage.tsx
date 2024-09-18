@@ -124,7 +124,7 @@ export default function UndianPage({}: Props) {
           <div
             className={`text-black ${
               startRandom && "border-8 border-black p-8"
-            } rounded font-bold text-9xl mb-6 mx-10 tracking-wide text-center`}
+            } rounded font-bold text-9xl mb-4 mx-10 tracking-wide text-center`}
           >
             {/* <div
               className={`tracking-normal transition-all duration-1000 mb-4 ${
