@@ -121,20 +121,21 @@ export default function UndianPage({}: Props) {
       <div className="relative">
         <div style={containerStyle}></div>
         <div className="fixed inset-0 flex items-center justify-start">
-          <div className="text-black font-bold text-9xl mb-6 mx-10 tracking-wide text-center">
-            <div
+          <div className="text-black border-8 border-black p-8 rounded font-bold text-9xl mb-6 mx-10 tracking-wide text-center">
+            {/* <div
               className={`tracking-normal transition-all duration-1000 mb-4 ${
                 showConfetti ? "opacity-100" : "opacity-0"
               }`}
             >
               {winnerData?.user?.displayName}
-            </div>
+            </div> */}
             {startRandom && (
               <RandomReveal
                 isPlaying={startRandom}
                 duration={duration}
                 revealDuration={1.6}
-                characters={winnerData?.uniqueCode}
+                // characters={winnerData?.uniqueCode}
+                characters={"Ammar Abror"}
                 onComplete={() => handleComplete()}
               />
             )}
