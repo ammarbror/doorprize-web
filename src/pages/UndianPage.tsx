@@ -120,11 +120,11 @@ export default function UndianPage({}: Props) {
       )}
       <div className="relative">
         <div style={containerStyle}></div>
-        <div className="fixed inset-0 flex items-center justify-start">
+        <div className="fixed inset-0 flex items-center justify-start max-w-[1200px]">
           <div
             className={`text-black ${
               startRandom && "border-8 border-black p-8"
-            } rounded font-bold text-9xl -mb-10 mx-24 tracking-wide text-center`}
+            } rounded font-bold text-7xl -mb-10 mx-24 tracking-wide text-wrap`}
           >
             {/* <div
               className={`tracking-normal transition-all duration-1000 mb-4 ${
