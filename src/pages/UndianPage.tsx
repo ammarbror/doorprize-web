@@ -110,6 +110,14 @@ export default function UndianPage({}: Props) {
     getData();
   }
 
+  const lowercase = Array.from({ length: 26 }, (_, i) =>
+    String.fromCharCode(97 + i)
+  );
+  const uppercase = Array.from({ length: 26 }, (_, i) =>
+    String.fromCharCode(65 + i)
+  );
+  const alphabet = [...lowercase, ...uppercase];
+
   return (
     <>
       {showConfetti && (
@@ -139,7 +147,7 @@ export default function UndianPage({}: Props) {
                 duration={duration}
                 updateInterval={0.1}
                 revealDuration={0.5}
-                characterSet={winnerData?.user?.displayName.split("")}
+                characterSet={alphabet}
                 characters={winnerData?.user?.displayName.split("")}
                 onComplete={() => handleComplete()}
               />
